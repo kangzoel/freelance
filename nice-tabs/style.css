@@ -1,0 +1,91 @@
+.nice-tabs {
+  font-family: Helvetica, sans-serif;
+  position: relative;
+}
+
+.nice-tabs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 4px;
+  background: white;
+  z-index: 5;
+}
+
+.nice-tabs .tabs {
+  display: flex;
+}
+
+.nice-tabs .tab {
+  font-weight: 700;
+  display: flex;
+}
+
+.tab-center-shadow {
+  position: relative;
+}
+
+.nice-tabs .tab-name {
+  background: linear-gradient(to bottom, #e0e0e0, #d2d2d2, #818181);
+  padding: 10px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.active .tab-center-shadow:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 6px;
+  right: 10px;
+  height: 10px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 45%);
+  z-index: 0;
+}
+
+.nice-tabs .active .tab-name {
+  background: #fff;
+  z-index: 3;
+}
+
+.nice-tabs .tab {
+  color: #595959;
+}
+
+.nice-tabs .tab:not(:first-child) {
+  margin-left: -7px;
+}
+
+.nice-tabs .tab.active {
+  color: #006e8e;
+}
+
+.nice-tabs .tab-content:not(.active) {
+  display: none;
+}
+
+.left-triangle,
+.right-triangle {
+  width: 20px;
+  z-index: 0;
+  background: linear-gradient(to bottom, #e0e0e0, #d2d2d2, #818181);
+}
+
+.left-triangle {
+  transform: skewX(-10deg) translateX(5px);
+  border-top-left-radius: 10px;
+}
+
+.right-triangle {
+  transform: skewX(10deg) translateX(-5px);
+  border-top-right-radius: 10px;
+}
+
+.active .left-triangle,
+.active .right-triangle {
+  background: #fff;
+  box-shadow: -2px 0 5px rgb(0 0 0 / 45%);
+  z-index: 2;
+}
